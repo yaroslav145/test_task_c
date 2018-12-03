@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1543712651 source:c:\program files (x86)\codeblocks\pr\ex6\main.cpp
+	<iostream>
+	"VectMat.h"
+
+1543285053 c:\program files (x86)\codeblocks\pr\ex6\vectmat.hpp
+	<iostream>
+
+1543714988 c:\program files (x86)\codeblocks\pr\ex6\vectmat.h
+	<iostream>
+
+1543710117 source:c:\program files (x86)\codeblocks\pr\ex6\vectmat.cpp
+	"VectMat.h"
+
+1543627211 source:c:\program files (x86)\codeblocks\pr\ex6\vectmat.h
+	<iostream>
+
+1543627715 c:\program files (x86)\codeblocks\pr\ex6\vectmat.cpp
+	"VectMat.h"
+
+1519020970 source:c:\program files (x86)\codeblocks\pr\ex6\r2graph.cpp
+	<assert.h>
+	"R2Graph.h"
+
+1519020958 c:\program files (x86)\codeblocks\pr\ex6\r2graph.h
+	<math.h>
+	<iostream>
+

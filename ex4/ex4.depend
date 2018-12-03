@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1543109578 source:c:\program files (x86)\codeblocks\pr\ex4\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+

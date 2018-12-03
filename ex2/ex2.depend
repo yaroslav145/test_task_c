@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1543016135 source:c:\program files (x86)\codeblocks\pr\ex2\main.cpp
+	<iostream>
+	<ctime>
+
+1543010454 c:\program files (x86)\codeblocks\pr\ex2\random.h
+

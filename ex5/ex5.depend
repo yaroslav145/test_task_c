@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1543170172 source:c:\program files (x86)\codeblocks\pr\ex5\main.cpp
+	<iostream>
+	<limits>
+	<cmath>
+
