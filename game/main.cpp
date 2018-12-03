@@ -400,7 +400,7 @@ class Level
             if(choice == 5)
                 bonuses.back().text.setString("S-");
 
-            if(choice == 5)
+            if(choice == 6)
                 bonuses.back().text.setString("L+");
 
             bonuses.back().text.setPosition(pos);
