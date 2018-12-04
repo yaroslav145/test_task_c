@@ -56,29 +56,43 @@ bool collideBallRect(sf::CircleShape& circ, const sf::RectangleShape& rect, sf::
 
     if((inx < 0) && (iny < 0))
     {
-        if(disty < 0)
+        if(disty < distx)
         {
-            if(vectx * ballv.x < 0)
+            if(disty < 0)
+            {
+                if(vectx * ballv.x < 0)
                 ballv.x *= -1;
 
-            if(vectx > 0)
-            {
-                circ.move(sf::Vector2f(-inx, 0));
-            }
-            else
-            {
-                circ.move(sf::Vector2f(inx, 0));
-            }
+                if(vectx > 0)
+                {
+                    circ.move(sf::Vector2f(-inx, 0));
+                }
+                else
+                {
+                    circ.move(sf::Vector2f(inx, 0));
+                }
 
-            return true;
+                return true;
+            }
         }
-
-        if(distx < 0)
+        else
         {
-            if(vecty * ballv.y < 0)
+            if(distx < 0)
+            {
+                if(vecty * ballv.y < 0)
                 ballv.y *= -1;
 
-            return true;
+                if(vecty > 0)
+                {
+                    circ.move(sf::Vector2f(0, -iny));
+                }
+                else
+                {
+                    circ.move(sf::Vector2f(0, iny));
+                }
+
+                return true;
+            }
         }
 
         if(dist(sf::Vector2f(distx, disty)) < circ.getRadius())
@@ -400,7 +414,7 @@ class Level
             if(choice == 5)
                 bonuses.back().text.setString("S-");
 
-            if(choice == 5)
+            if(choice == 6)
                 bonuses.back().text.setString("L+");
 
             bonuses.back().text.setPosition(pos);
