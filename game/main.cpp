@@ -455,9 +455,9 @@ class Level
 
                     if(abs(block.at(i).rect.getPosition().x - winW/2) > 350)
                     {
-                        block.at(i).hp = 3;
+                        block.at(i).hp = 2;
                         block.at(i).setBlockColorByHp();
-                        block.at(i).scorePoints = 3;
+                        block.at(i).scorePoints = 2;
                     }
                 }
             }
@@ -694,7 +694,7 @@ class Scene
                     {
                         if(platform.rect.getSize().x <= 300)
                         {
-                            platform.rect.setSize(sf::Vector2f(platform.rect.getSize().x + 20, platform.rect.getSize().y));
+                            platform.rect.setSize(sf::Vector2f(platform.rect.getSize().x + 50, platform.rect.getSize().y));
                             platform.rect.setOrigin(platform.rect.getSize()/2.f);
                         }
                     }
@@ -703,7 +703,7 @@ class Scene
                     {
                         if(platform.rect.getSize().x >= 100)
                         {
-                            platform.rect.setSize(sf::Vector2f(platform.rect.getSize().x - 20, platform.rect.getSize().y));
+                            platform.rect.setSize(sf::Vector2f(platform.rect.getSize().x - 50, platform.rect.getSize().y));
                             platform.rect.setOrigin(platform.rect.getSize()/2.f);
                         }
                     }
@@ -712,8 +712,8 @@ class Scene
                     {
                         if(ball.circ.getRadius() <= 30)
                         {
-                            ball.circ.setRadius(ball.circ.getRadius() + 3);
-                            ball.circ.setOrigin(ball.circ.getRadius()/2, ball.circ.getRadius()/2);
+                            ball.circ.setRadius(ball.circ.getRadius() * 1.2f);
+                            ball.circ.setOrigin(sf::Vector2f(ball.circ.getRadius(), ball.circ.getRadius()));
                         }
                     }
 
@@ -721,19 +721,19 @@ class Scene
                     {
                         if(ball.circ.getRadius() >= 8)
                         {
-                            ball.circ.setRadius(ball.circ.getRadius() - 3);
-                            ball.circ.setOrigin(ball.circ.getRadius()/2, ball.circ.getRadius()/2);
+                            ball.circ.setRadius(ball.circ.getRadius() / 1.2f);
+                            ball.circ.setOrigin(sf::Vector2f(ball.circ.getRadius(), ball.circ.getRadius()));
                         }
                     }
 
                     if(it->text.getString() == "S+")
                     {
-                        platform.platformSpeed *= 1.1f;
+                        platform.platformSpeed *= 1.5f;
                     }
 
                     if(it->text.getString() == "S-")
                     {
-                        platform.platformSpeed /= 1.1f;
+                        platform.platformSpeed /= 1.5f;
                     }
 
                     if(it->text.getString() == "L+")
@@ -975,12 +975,12 @@ class Scene
                         player.score += it->scorePoints;
 
                         it->hp--;
-                        it->scorePoints--;
+                        it->scorePoints = it->hp;
                         if(it->hp <= 0)
                         {
                             it->status = false;
 
-                            if(rand()%15 == 0)
+                            if(rand()%10 == 0)
                                 level.createBonus(it->rect.getPosition());
                         }
                         it->setBlockColorByHp();
