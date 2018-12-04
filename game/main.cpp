@@ -451,8 +451,13 @@ class Level
                 for(int i = 0; i < block.size(); ++i)
                 {
                     if(dist(sf::Vector2f(block.at(i).rect.getPosition().x - winW/2, block.at(i).rect.getPosition().y - winH/2)) > 410)
-                    {
                         block.at(i).status = false;
+
+                    if(abs(block.at(i).rect.getPosition().x - winW/2) > 350)
+                    {
+                        block.at(i).hp = 3;
+                        block.at(i).setBlockColorByHp();
+                        block.at(i).scorePoints = 3;
                     }
                 }
             }
@@ -568,6 +573,7 @@ class Scene
                 levelLabel.text.setCharacterSize(40);
 
                 player.setDefault();
+                level.setDefault();
 
                 initNewLevel();
             }
@@ -969,6 +975,7 @@ class Scene
                         player.score += it->scorePoints;
 
                         it->hp--;
+                        it->scorePoints--;
                         if(it->hp <= 0)
                         {
                             it->status = false;
